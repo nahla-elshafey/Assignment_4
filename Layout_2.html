@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout 2</title>
+    <style>
+        /* layout 2 should have 6 grid rows and 3 grid columns */
+        body {
+            margin: 20px auto 0 auto;
+            width: 960px; 
+            min-height: 100%;           
+        }
+        main > * {
+            background: silver;
+        }
+        main {
+            display: grid;
+            width: 960px;
+            height: 700px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 2fr 4fr repeat(3,3fr) 1fr;
+            grid-gap: 10px;
+            margin: 20px auto;
+        }
+        header  {grid-row: 1 / 2; grid-column: 1 / 2; width: 220px;}
+        nav     {
+                    grid-row: 1 / 2; grid-column: 3 / 4; 
+                    height: 40px; width: 520px;
+                    margin-top: 10px;
+                    align-items: center; justify-items: center; 
+                    list-style-type: none; display: grid; 
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: 1fr;
+                }
+        li  {align-items: center; justify-items: center; }
+        .intro  {grid-row: 2 / 3; grid-column: 1 / 4;
+                  background-color: white; font-size: 1em; line-height: 1.5em; font-family: sans-serif;}
+
+        .prods  {grid-row: 3 / 6; grid-column: 1 / 4;
+                 display: grid; 
+                 grid-template-columns: repeat(3, 1fr);
+                 grid-template-rows: repeat(3, 1fr);
+                 grid-gap: 10px;}
+
+        
+        #prod1  {grid-row: 3 / 4; grid-column: 1 / 2;}
+        #prod2  {grid-row: 3 / 4; grid-column: 2 / 3;}
+        #prod3  {grid-row: 3 / 4; grid-column: 3 / 4;}
+        #prod4  {grid-row: 4 / 5; grid-column: 1 / 2;}
+        #prod5  {grid-row: 4 / 5; grid-column: 2 / 3;}
+        #prod6  {grid-row: 4 / 5; grid-column: 3 / 4;}
+        #prod7  {grid-row: 5 / 6; grid-column: 1 / 2;}
+        #prod8  {grid-row: 5 / 6; grid-column: 2 / 3;}
+        #prod9  {grid-row: 5 / 6; grid-column: 3 / 4;}
+        
+        footer  {grid-row: 6 / 7; grid-column: 1 / 4; 
+                 text-align: center; padding-top: 6px;}
+    </style>
+</head>
+<body>
+<main>
+    <header>Company Logo</header>
+    <nav>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </nav>
+    <section class= "intro">
+        <p style="font-weight: bold; font-size: 2em;">Grid layout kind of visualizes the web page in the best possible mockup for the developer to work with, 
+            which was my issue in may be the second module, how can the developer keep track of all styles.</p>
+        <p> Grid layout kind of breaks down the web page a bit and you can work with smaller parts, one at a time. 
+            I also find that the numbered lines is probably the easiest of all 4 methods, then the template areas.</p>
+    </section>
+    <section class="prods">
+        <section id= "prod1"></section>
+        <section id= "prod2"></section>
+        <section id= "prod3"></section>
+        <section id= "prod4"></section>
+        <section id= "prod5"></section>
+        <section id= "prod6"></section>
+        <section id= "prod7"></section>
+        <section id= "prod8"></section>
+        <section id= "prod9"></section>
+    </section>    
+    <footer>Copyright Notice</footer>
+</main>
+</body>
+</html>
